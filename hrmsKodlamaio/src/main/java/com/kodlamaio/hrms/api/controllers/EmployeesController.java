@@ -33,6 +33,11 @@ private EmployeeService employeeService;
 	{
 		 return this.employeeService.getAll();
 	}
+	@GetMapping("/getById")
+	public DataResult<List<Employee>> getById(int id)
+	{
+		 return this.employeeService.findById(id);
+	}
 	@PostMapping("/add")
 	public Result add(@RequestBody Employee employee) {
 		return this.employeeService.add(employee);

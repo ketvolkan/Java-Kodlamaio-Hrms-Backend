@@ -47,4 +47,8 @@ private EmployerCheckService employerCheckService;
 		this.employerDao.deleteById(id);
 		return new SuccessResult("ID:"+id+" Başarıyla Silindi");
 	}
+	@Override
+	public DataResult<List<Employer>> findById(int id) {
+		return new SuccessDataResult<List<Employer>>(this.employerDao.findById(id),"Employer'lar Listelendi");
+	}
 }

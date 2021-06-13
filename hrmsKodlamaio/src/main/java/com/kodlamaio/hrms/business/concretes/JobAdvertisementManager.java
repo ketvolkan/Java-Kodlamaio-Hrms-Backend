@@ -65,5 +65,17 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(page).getContent(),"Page:"+pageno+":"+pagesize+"İş İlanları Listelendi");
 	}
 
+	@Override
+	public Result delete(int id) {
+		this.jobAdvertisementDao.deleteById(id);
+		return new SuccessResult("ID:"+id+" Başarıyla Silindi");
+	}
+
+	@Override
+	public Result setActive(int id) {
+		this.jobAdvertisementDao.setActive(id);
+		return new SuccessResult("İlan Pasif Hale Getirildi");
+	}
+
 
 }

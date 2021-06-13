@@ -1,5 +1,7 @@
 package com.kodlamaio.hrms.dataAccess.abstracts;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,4 +20,6 @@ public interface EmployerDao extends JpaRepository<Employer,Integer> {
 	 @Modifying
 	 @Query("update employers u set u.is_confirmed = true where u.id = :id")
      void setConfirimation(@Param("id") int id);
+	 
+	 List<Employer> findById(int id);
 }

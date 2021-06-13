@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -60,5 +61,15 @@ public class JobAdvertisementsController {
 	public Result setPasive(int id)
 	{
 		 return this.jobAdvertisementService.setPasive(id);
+	}
+	@PostMapping("/setActive")
+	public Result setActive(int id)
+	{
+		 return this.jobAdvertisementService.setActive(id);
+	}
+	@DeleteMapping("/delete")
+	public Result delete(int id) {
+		return this.jobAdvertisementService.delete(id);
+		
 	}
 }

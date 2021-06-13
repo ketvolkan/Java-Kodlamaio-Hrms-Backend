@@ -17,4 +17,6 @@ public interface JobAdvertisementService {
 	DataResult<List<JobAdvertisement>> getByActive(boolean activity);
 	DataResult<List<JobAdvertisement>> getByActive(boolean activity,Sort sort);
 	Result setPasive(int id);
+	Result setActive(int id);
+	Result delete(int id);
 }

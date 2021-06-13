@@ -20,6 +20,10 @@ public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement,Inte
     @Modifying
     @Query("update JobAdvertisement j set j.active = false where j.id=:id")
     void setPasive(@Param("id") int id);
+    
+    @Modifying
+    @Query("update JobAdvertisement j set j.active = true where j.id=:id")
+    void setActive(@Param("id") int id);
   /* @Query("Select new com.kodlamaio.hrms.entities.dtos.JobAdvertisementDto"
     		+ "(j.id,e.company_name,c.title,j.positionCount,j.releaseDate,j.deadline)"
     		+ "From JobAdvertisement j "

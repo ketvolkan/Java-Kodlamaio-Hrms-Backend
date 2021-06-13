@@ -46,5 +46,10 @@ private EmployeeCheckService employeeCheckService;
 		this.employeeDao.deleteById(id);
 		return new SuccessResult("ID:"+id+" Başarıyla Silindi");
 	}
+	@Override
+	public DataResult<List<Employee>> findById(int id) {
+		
+		return new SuccessDataResult<List<Employee>>(this.employeeDao.findById(id),"Başarılı");
+	}
 
 }
